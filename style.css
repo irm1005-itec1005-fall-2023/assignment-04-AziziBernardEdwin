@@ -41,6 +41,24 @@ main {
   align-items: center;
 }
 
+.task-finished {
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-finished:checked + .item-description{
+  background: orange;
+  text-decoration: overline;
+}
+
+#start{
+font-weight: bold;
+color: orange;
+background-color: aquamarine;
+}
 
 /****** Screen reader text utility clsas *******/
 .sr-only {

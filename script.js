@@ -7,11 +7,13 @@
 
 //
 // Variables
-//
+let todoItems = [];
+let nextId = 1;
+
 
 // Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+const startButton = document.getElementById("start");
+const taskList = document.getElementById("list");
 
 // DOM Elements
 let appContainer = document.getElementById(appID);
