@@ -41,25 +41,17 @@
   -->
 
   <main>
-    <div class="app">
-
-      <header>
-        <h1>Your Tasks</h1>
-        <button id="start">Add Task</button>
-      </header>
-    </div>
-
-      <div class="task-list" id="list">
-
-        <div class="item">
-          <input type="checkbox">
-          <input type="textbox" value="Put your task here">
-        </div>
-        
+    <div id="Tasks"></div>
+    <template id="TaskTemplate">
+      <div class="Task">
+        <input type ="checkbox" class="task-complete">
+        <input type ="text" class ="description" placeholder="Put your task here">
       </div>
+    </template>
+    <button id="start">Let's get started!</button>
 
   </main>
-
+ 
   <!-- Add JavaScript File -->
   <script src="./script.js"></script>
 

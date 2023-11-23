@@ -33,34 +33,25 @@ body {
   background-color: var(--body-background-colour);
 }
 
-main {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.description{
+  padding: 0.6rem;
+  margin-bottom: 2rem;
 }
 
-.task-finished {
-  padding: 0.5rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.task-finished:checked + .item-description{
-  background: orange;
-  text-decoration: overline;
+.task-complete:checked + .description{
+  background-color: red;
+  text-decoration: line-through;
 }
 
 #start{
-font-weight: bold;
-color: orange;
-background-color: aquamarine;
+  padding:1rem;
+  font-weight: bold;
+  color:#e63946;
+  background: black;
+  cursor: pointer;
 }
 
-/****** Screen reader text utility clsas *******/
+/****** Screen reader text utility class *******/
 .sr-only {
   position: absolute;
   width: 1px;
