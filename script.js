@@ -37,6 +37,13 @@ function setItems(items) {
   localStorage.setItem("todo", itemsJson);
 }
 
+function updateItem(item, key, value){
+  item[key] = value;  
+
+  setItems(items);
+  refreshList();
+  
+}
 // Function to add a new item
 function addItem(){
   // Add a new item object to the beginning of the items array
@@ -52,6 +59,23 @@ function addItem(){
 
 // Function to refresh the displayed list
 function refreshList(){
+  items.sort((a,b) => {
+      if (a.completed){
+        return 1;
+        
+      }
+
+      if (b.completed){
+        return -1;
+        
+      }
+      
+      return a.description < b.description ? -1: 1;
+
+  });
+
+
+  
   // Clear the existing content inside TASK_CONTAINER
   TASK_CONTAINER.innerHTML = "";
 
@@ -68,6 +92,14 @@ function refreshList(){
     descriptionInput.value = item.description; 
     completedInput.checked = item.completed; 
 
+    descriptionInput.addEventListener("change", () =>{
+      updateItem(item, "description", descriptionInput.value);
+    });
+
+    completedInput.addEventListener("change", () =>{
+      updateItem(item, "description", descriptionInput.value);
+    });
+
     // Append the cloned itemElement to the TASK_CONTAINER
     TASK_CONTAINER.appendChild(itemElement);
   }
@@ -78,8 +110,10 @@ BUTTON_ADDITION.addEventListener("click", () => {
   addItem();
 })
 
+
 // Initial refresh of the list on page load
 refreshList();
+
 
 // Logging the items array to console
 console.log(items);
