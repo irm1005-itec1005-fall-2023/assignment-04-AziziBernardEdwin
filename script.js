@@ -7,7 +7,7 @@
 
 //
 // Variables
-
+let items = getItems();
 
 
 // Constants
@@ -16,14 +16,18 @@
 const TASK_CONTAINER = document.getElementById("Tasks");
 const TASK_TEMPLATE = document.getElementById("TaskTemplate");
 const BUTTON_ADDITION = document.getElementById("start");
+const MAX_DISPLAY_ITEMS = 15;
+const DELETE_COMPLETED_BUTTON = document.getElementById("deleteCompleted");
+
 
 // DOM Elements
+document.addEventListener("DOMContentLoaded", onPageLoad);
+
 
 //
 // Functions
 
 // Fetch items from local storage or initialize an empty array
-let items = getItems();
 
 // Function to get items from local storage
 function getItems() {
@@ -57,6 +61,13 @@ function addItem(){
   refreshList();
 }
 
+function updateCompletedStatus(item, completed) {
+  item.completed = completed;
+  setItems(items);
+  refreshList();
+}
+
+
 // Function to refresh the displayed list
 function refreshList(){
   items.sort((a,b) => {
@@ -74,10 +85,19 @@ function refreshList(){
 
   });
 
+  function deleteCompletedItems() {
+    items = items.filter((item) => !item.completed);
+    setItems(items);
+    refreshList();
+  }
 
   
   // Clear the existing content inside TASK_CONTAINER
   TASK_CONTAINER.innerHTML = "";
+
+  for (let i = 0; i < items.length && i < MAX_DISPLAY_ITEMS; i++) {
+    const item = items[i];
+  }
 
   // Loop through items array and create elements based on the template
   for (const item of items) {
@@ -96,8 +116,8 @@ function refreshList(){
       updateItem(item, "description", descriptionInput.value);
     });
 
-    completedInput.addEventListener("change", () =>{
-      updateItem(item, "description", descriptionInput.value);
+    completedInput.addEventListener("change", () => {
+      updateCompletedStatus(item, completedInput.checked);
     });
 
     // Append the cloned itemElement to the TASK_CONTAINER
@@ -105,41 +125,41 @@ function refreshList(){
   }
 }
 
+TASK_CONTAINER.addEventListener("click", (event) => {
+  if (event.target.matches("#edit")) {
+    const selectedItem = event.target.closest(".Task");
+    const itemIndex = Array.from(selectedItem.parentNode.children).indexOf(selectedItem);
+    const selectedItemData = items[itemIndex];
+    editTask(selectedItemData);
+  }
+
+  if (event.target.matches("#delete")) {
+    const selectedItem = event.target.closest(".Task");
+    const itemIndex = Array.from(selectedItem.parentNode.children).indexOf(selectedItem);
+    items.splice(itemIndex, 1);
+    setItems(items);
+    refreshList();
+  }
+});
 // Event listener for the button click to add a new item
 BUTTON_ADDITION.addEventListener("click", () => {
   addItem();
 })
 
+DELETE_COMPLETED_BUTTON.addEventListener("click", () => {
+  deleteCompletedItems();
+});
 
 // Initial refresh of the list on page load
 refreshList();
+
+// Function to refresh the list on page load
+function onPageLoad() {
+  refreshList();
+}
+
 
 
 // Logging the items array to console
 console.log(items);
 
-
-//
-
-// Add a heading to the app container
-// function inititialise() {
-  // If anything is wrong with the app container then end
- // if (!appContainer) {
-   // console.error("Error: Could not find app contianer");
-    //return;
-  // }
-
-
-  // Create an h1 and add it to our app
- // const h1 = document.createElement("h1");
-  //h1.innerText = headingText;
-  //appContainer.appendChild(h1);
-
-  // Init complete
-//  console.log("App successfully initialised");
-//}
-
-//
-// Inits & Event Listeners
-//
-// inititialise();

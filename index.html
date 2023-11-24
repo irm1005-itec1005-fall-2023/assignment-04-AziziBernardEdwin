@@ -41,14 +41,29 @@
   -->
 
   <main>
+
+
+    <div id="app"></div>
+    <div id="alert"></div>
+
+
     <div id="Tasks"></div>
     <template id="TaskTemplate">
       <div class="Task">
         <input type ="checkbox" class="task-complete">
         <input type ="text" class ="description" placeholder="Put your task here">
+        <button id="delete">Delete</button>
       </div>
     </template>
+   <div>
     <button id="start">Let's get started!</button>
+    <button id="clear">Clear all tasks</button>
+  </div>
+   
+  <div class="changes">
+      <button id="edit">Edit</button>
+      <button id="delete">Delete</button>
+    </div>
 
   </main>
  
