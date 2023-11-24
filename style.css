@@ -39,7 +39,7 @@ body {
 }
 
 .task-complete:checked + .description{
-  background-color: red;
+  background-color: rgb(156, 156, 156);
   text-decoration: line-through;
 }
 
@@ -50,6 +50,8 @@ body {
   background: black;
   cursor: pointer;
 }
+
+
 
 /****** Screen reader text utility class *******/
 .sr-only {

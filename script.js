@@ -126,13 +126,6 @@ function refreshList(){
 }
 
 TASK_CONTAINER.addEventListener("click", (event) => {
-  if (event.target.matches("#edit")) {
-    const selectedItem = event.target.closest(".Task");
-    const itemIndex = Array.from(selectedItem.parentNode.children).indexOf(selectedItem);
-    const selectedItemData = items[itemIndex];
-    editTask(selectedItemData);
-  }
-
   if (event.target.matches("#delete")) {
     const selectedItem = event.target.closest(".Task");
     const itemIndex = Array.from(selectedItem.parentNode.children).indexOf(selectedItem);
