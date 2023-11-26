@@ -55,8 +55,14 @@ body {
   border-radius: 0.7rem;
   border-style:double;
   color:white;
+  height: 3.5rem;  
   margin-right: 2rem;
   margin-bottom:1rem;
+}
+
+.task-complete{
+  background-color: #e63946;
+  border-radius: 2rem;
 }
 
 .task-complete:checked + .description{
@@ -67,14 +73,16 @@ body {
 .action{
   flex-wrap: wrap;
   flex-direction: column;
+  margin-left: 30rem;
+  margin-bottom: 20rem;
   position: fixed;
   padding: 4rem
 }
 
 #Tasks{
   flex-wrap: wrap;
-  margin-top: 0.5rem;
-  width: 2rem
+  margin-top: 0.6rem;
+  width: 2rem;
 }
 
 #start{
