@@ -92,13 +92,6 @@ function refreshList(){
 
   });
 
-  function deleteCompletedItems() {
-    items = items.filter((item) => !item.completed);
-    setItems(items);
-    refreshList();
-  }
-
-  
   // Clear the existing content inside TASK_CONTAINER
   TASK_CONTAINER.innerHTML = "";
 

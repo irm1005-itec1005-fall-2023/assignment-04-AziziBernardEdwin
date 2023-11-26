@@ -37,59 +37,95 @@ body {
 
 .main{
   border-style: groove;
-  background-image: url(https://img.youtube.com/vi/mC_X5pmsLOw/maxresdefault.jpg);
-  
+  background-image: url(https://i.pinimg.com/originals/1e/64/c3/1e64c3289a248160c26a3b57b221e282.png);
 }
 
 .header{
+  background-color: black;
   border: #ffffff;
-  font-family: monospace;
   border-style:double;
+  color:#ffffff;
+  font-family: monospace;
   text-decoration: solid;
-  color:#ffffff
+  flex-direction: column;
 }
 
 .description{
-  padding: 0.1rem;
-  margin-bottom: 2rem;
+  background-color: #ffffff00; 
+  border-radius: 0.7rem;
+  border-style:double;
+  color:white;
+  margin-right: 2rem;
+  margin-bottom:1rem;
 }
-
 
 .task-complete:checked + .description{
   background-color: rgb(156, 156, 156);
   text-decoration: line-through;
 }
 
+.action{
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: fixed;
+  padding: 4rem
+}
+
+#Tasks{
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  width: 2rem
+}
+
 #start{
-  padding:1rem;
-  font-weight: bold;
-  color:#e63946;
-  background: black;
+  background-color: black;
+  border-radius: 0.5rem;
+  border-style:none;
+  box-shadow: 0 0 5px white, 0 0 25px white;
+  color:#ffffff;
   cursor: pointer;
+  font-weight: bold;
+  padding:1rem;
+}
+
+#start:hover{
+box-shadow: 0 0 5px rgb(4, 230, 0), 0 0 25px rgb(4, 230, 0), 
+0 0 50px, 0 0 100px rgb(4, 230, 0), 0 0 200px rgb(4, 230, 0) ;
 }
 
 #delete{
   background-color: rgba(250, 235, 215, 0);
   border-style: none;
-  background-color: black;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255);
   color:white;
   font-weight: bold;
   font-size: 1.2rem;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+#delete:hover{
+  box-shadow: 0 0 5px rgb(246, 246, 246), 0 0 25px rgb(255, 255, 255), 
+  0 0 50px, 0 0 100px rgb(255, 255, 255), 0 0 200px rgb(255, 255, 255) ;
+  }
+
 #clear{
-  padding:1rem;
-  font-weight: bold;
-  color:#e63946;
   background: black;
+  border-style: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255);
+  color:#ffffff;
   cursor: pointer;
+  font-weight: bold;
+  padding:1rem;  
 }
 
-input[type="checkbox"]{
-  appearance: n;
-}
 
+#clear:hover{
+  box-shadow: 0 0 5px rgb(218, 0, 0), 0 0 25px rgb(230, 0, 0), 
+  0 0 50px, 0 0 100px rgb(230, 0, 0), 0 0 200px  rgb(230, 0, 0) ;
+  }
+  
 /****** Screen reader text utility class *******/
 .sr-only {
   position: absolute;
