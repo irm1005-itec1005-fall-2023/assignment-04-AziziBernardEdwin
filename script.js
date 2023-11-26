@@ -18,6 +18,8 @@ const TASK_TEMPLATE = document.getElementById("TaskTemplate");
 const BUTTON_ADDITION = document.getElementById("start");
 const MAX_DISPLAY_ITEMS = 15;
 const DELETE_COMPLETED_BUTTON = document.getElementById("deleteCompleted");
+const clearButton = document.getElementById("clear");
+
 
 
 // DOM Elements
@@ -67,6 +69,11 @@ function updateCompletedStatus(item, completed) {
   refreshList();
 }
 
+function clearAllTasks() {
+  items = []; // Set items array to an empty array
+  setItems(items); // Update local storage
+  refreshList(); // Refresh the displayed list (which will be empty)
+}
 
 // Function to refresh the displayed list
 function refreshList(){
@@ -124,6 +131,8 @@ function refreshList(){
     TASK_CONTAINER.appendChild(itemElement);
   }
 }
+clearButton.addEventListener("click", clearAllTasks);
+
 
 TASK_CONTAINER.addEventListener("click", (event) => {
   if (event.target.matches("#delete")) {
