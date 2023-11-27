@@ -41,13 +41,17 @@ body {
 }
 
 .header{
-  background-color: black;
-  border: #ffffff;
-  border-style:double;
+
   color:#ffffff;
   font-family: monospace;
   text-decoration: solid;
+  display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  padding: 2rem;
+  margin-left: 30rem
+  
 }
 
 .description{
