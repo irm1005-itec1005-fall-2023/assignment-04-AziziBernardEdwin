@@ -31,18 +31,129 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--body-default-colour);
   background-color: var(--body-background-colour);
+  background-image: url(https://img.youtube.com/vi/mC_X5pmsLOw/maxresdefault.jpg);
+
 }
 
-main {
-  min-height: 100vh;
+.main{
+  border-style: groove;
+  background-image: url(https://i.pinimg.com/originals/1e/64/c3/1e64c3289a248160c26a3b57b221e282.png);
+}
 
+.header{
+
+  color:#ffffff;
+  font-family: monospace;
+  text-decoration: solid;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  font-size: 1.6rem;
+  justify-content: flex-end;
+  position: relative;
+  padding: 3rem;
+  margin-left: 10rem
+  
+}
+
+.description{
+  background-color: #ffffff; 
+  border-radius: 0.9rem;
+  border-style:double;
+  color:rgb(0, 0, 0);
+  display:flex;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 3.5rem;  
+  margin-left: -3rem;
+  margin-bottom: 1rem;
+}
+
+.Task{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  margin-left: 2rem;
+}
+
+.task-complete{
+  background-color: #ffffff00;
+  border-radius: 2rem;
+  margin-left: 34rem;
+  position:relative;
+  top: 0.9rem;
+  left: -4rem;
+  width:1.5rem;  
+  height: 1.5rem;
+
+}
+
+.task-complete:checked + .description{
+  background-color: rgb(156, 156, 156);
+  text-decoration: line-through;
+}
+
+.action{
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 30rem;
+  margin-bottom: 20rem;
+  position: fixed;
+  padding: 4rem
 }
 
 
-/****** Screen reader text utility clsas *******/
+#start{
+  background-color: black;
+  border-radius: 0.5rem;
+  border-style:none;
+  box-shadow: 0 0 5px white, 0 0 25px white;
+  color:#ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  padding:1rem;
+}
+
+#start:hover{
+box-shadow: 0 0 5px rgb(4, 230, 0), 0 0 25px rgb(4, 230, 0), 
+0 0 50px, 0 0 100px rgb(4, 230, 0), 0 0 200px rgb(4, 230, 0) ;
+}
+
+#delete{
+  background-color: rgb(0, 0, 0);
+  border-style: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255);
+  color:white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 47rem;
+  position:relative;
+  bottom:60px;
+}
+
+#delete:hover{
+  box-shadow: 0 0 5px rgb(246, 246, 246), 0 0 25px rgb(255, 255, 255), 
+  0 0 50px, 0 0 100px rgb(255, 255, 255), 0 0 200px rgb(255, 255, 255) ;
+  }
+
+#clear{
+  background: black;
+  border-style: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 25px rgb(255, 255, 255);
+  color:#ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  padding:1rem;  
+}
+
+
+#clear:hover{
+  box-shadow: 0 0 5px rgb(218, 0, 0), 0 0 25px rgb(230, 0, 0), 
+  0 0 50px, 0 0 100px rgb(230, 0, 0), 0 0 200px  rgb(230, 0, 0) ;
+  }
+  
+/****** Screen reader text utility class *******/
 .sr-only {
   position: absolute;
   width: 1px;
